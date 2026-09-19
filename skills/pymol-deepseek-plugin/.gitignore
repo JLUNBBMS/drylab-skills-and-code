@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+deepseek_key
+deepseek_config.json
+*.key
+*.pem
+
+# Logs and generated files
+*.log
+build/
+dist/
+*.egg-info/
+release/
+
+# PyMOL sessions and large local structures
+*.pse
+*.pze

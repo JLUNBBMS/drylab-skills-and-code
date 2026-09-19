@@ -1,0 +1,22 @@
+name: Feature request
+description: Propose a new feature or interaction improvement
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Security and compatibility impact
+      description: Does this expand the model's executable capabilities, add dependencies, or affect PyMOL version compatibility?

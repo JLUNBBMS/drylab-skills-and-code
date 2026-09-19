@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.python_packages/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# Project data and generated artifacts are released through GitLab.
+data/raw/
+data/processed/
+results/
+figures/
+output/
+outputs/
+*.docx
+*.pdf
+*.xlsx
+*.rar
+*.zip
