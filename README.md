@@ -10,11 +10,11 @@ Project datasets, fitted parameters, numerical result tables, and released model
 | `skills/generate-cadnano/` | generate-cadnano skill instructions, Python implementation, tests, and references |
 | `skills/pymol-deepseek-plugin/` | PyMOL DeepSeek plugin source, tests, release checks, and project documentation |
 | `modeling/virtual-fermenter/` | Virtual-fermenter model and optimization source code |
-| `modeling/delivery-model/` | Delivery and release-model source code |
+| `modeling/delivery-model/` | Current TH21 tFNA skin-delivery model source code and reproduction entry point |
 
 ## Data location
 
-The GitLab data repository URL will be added by the team after the data package is published. Each modeling directory contains a `DATA_LOCATION.md` file describing the expected external data or result directories.
+Model data and results are maintained in the companion [GitLab data repository](https://gitlab.com/jlunbbms-group/drylab-data-and-modeling). Each modeling directory contains a `DATA_LOCATION.md` file describing the expected external data or result directories.
 
 ## Evidence boundaries
 
@@ -24,4 +24,4 @@ The GitLab data repository URL will be added by the team after the data package 
 
 ## Before public release
 
-The team must select and add an appropriate repository license and replace the pending GitLab link with the final public URL.
+The team must select and add an appropriate repository license.

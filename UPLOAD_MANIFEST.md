@@ -5,8 +5,7 @@ This package was curated for a Git repository that publishes skills and source c
 ## Included
 
 - Skill instructions, implementation scripts, references, tests, and required project metadata.
-- Core Python model code, entry points, configuration templates, and dependency lists.
-- Small blank CSV templates required to record future release experiments.
+- Core Python model code, entry points, dependency lists, and external-data location notes.
 
 ## Excluded
 

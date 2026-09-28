@@ -14,9 +14,11 @@ venv/
 Thumbs.db
 
 # Project data and generated artifacts are released through GitLab.
+modeling/**/data/
 data/raw/
 data/processed/
 results/
+reproduced/
 figures/
 output/
 outputs/
