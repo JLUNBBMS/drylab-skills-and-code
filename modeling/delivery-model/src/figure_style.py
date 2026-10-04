@@ -25,5 +25,5 @@ def draw_schematic(output):
     ax.text(.2,1.72,'0–15 min: ideal replenishment\nAfter 15 min: no external input',fontsize=10,color=C[2],linespacing=1.6)
     ax.text(3.5,1.55,'Human-skin measured layer diffusion\naccounts for tissue resistance',fontsize=10,color=C[1])
     ax.text(.2,.35,'Initial tissue and cells are empty. Existing skin reservoirs continue to evolve after the mask is removed.',fontsize=9)
-    ax.text(7.05,1.03,'CK target: 1 µmol/L\ntFNA equivalent: 0.5 µmol/L',ha='center',fontsize=10,fontweight='bold')
+    ax.text(7.05,1.03,'CK safety limit: 1 µmol/L\ntFNA equivalent: 0.5 µmol/L',ha='center',fontsize=10,fontweight='bold')
     save(fig,2,'Fig02_Model_and_Window','Figure 2. A finite full follicular reservoir supplies tissue during a 15-minute ideal application, followed by transport without external replenishment.')

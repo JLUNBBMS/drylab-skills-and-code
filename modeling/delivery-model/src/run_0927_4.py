@@ -50,18 +50,14 @@ fig,axs=plt.subplots(1,2,figsize=(10.3,3.7),layout='constrained')
 for ax,layer,title in zip(axs,['VE','dermis'],['Viable epidermis','Shallow dermis']):
  q=o[o.time_min<=15];ax.plot(q.time_min,q[layer+'_contact_uM'],c=C[2],lw=2,label='Cell-contact tFNA concentration')
  ax.text(.05,.65,f"At 15 min\n{a[layer+'_contact_uM']:.4f} µmol/L",transform=ax.transAxes,fontsize=10)
- ax.text(.98,.96,'0.5 µmol/L tFNA target (off scale)',transform=ax.transAxes,ha='right',va='top',fontsize=8,color=C[1])
+ ax.text(.98,.96,'0.5 µmol/L tFNA limit (off scale)',transform=ax.transAxes,ha='right',va='top',fontsize=8,color=C[1])
  ax.set(xlabel='Time during application (min)',ylabel='Intact tFNA at cell surface (µmol/L)',xlim=(0,15),ylim=(0,.08),yticks=np.arange(0,.081,.02),xticks=[0,5,10,15],title=title)
 axs[1].legend(fontsize=8,loc='upper left',bbox_to_anchor=(.02,.88));pf.lab(axs[0],'A');pf.lab(axs[1],'B')
 save(fig,'Fig03_Application_Exposure.png')
-fig,axs=plt.subplots(1,2,figsize=(10.3,3.7),layout='constrained');ax=axs[0]
-for minute,col,ls,label in [(15,C[0],'-','15 min'),(60,C[1],'--','1 h'),(240,C[2],'-','4 h')]:
- k=np.searchsorted(mins,minute);ax.plot(m.contact(y[k]),m.z,c=col,ls=ls,lw=2,label=label)
-ax.axhline(100,c=C[4],lw=1,ls=':');ax.set(xlabel='Free intact tFNA (µmol/L extracellular fluid)',ylabel='Depth (µm)',xlim=(0,.18),xticks=np.arange(0,.181,.03),ylim=(400,0),title='Free concentration–depth profile');ax.legend(fontsize=9,loc='lower right');pf.lab(ax,'A')
-ax=axs[1];q=o[o.time_min<=240]
-for layer,col,ls,label in [('VE',C[2],'-','Viable epidermis'),('dermis',C[1],'--','Shallow dermis')]:ax.plot(q.time_h,q[layer+'_contact_uM'],c=col,ls=ls,lw=2,label=label)
-ax.axvspan(0,.25,color=C[3],alpha=.5);ax.set(xlabel='Time from application (h)',ylabel='Effective tFNA concentration (µmol/L)',title='Residual delivery after mask removal',xlim=(0,4),xticks=[0,1,2,3,4],ylim=(0,.18),yticks=np.arange(0,.181,.03));ax.text(.02,.96,'0.5 µmol/L tFNA target (off scale)',transform=ax.transAxes,va='top',fontsize=8,color=C[1]);ax.legend(fontsize=8,loc='lower right',bbox_to_anchor=(1,.02));pf.lab(ax,'B')
-save(fig,'Fig04_Depth_and_Delayed_Exposure.png')
+from plot_depth_heatmap import draw_depth_and_exposure
+heatmap_mask=mins<=240
+fig=draw_depth_and_exposure(m,mins[heatmap_mask]/60,y[heatmap_mask],o)
+save(fig,'Fig04_Depth_and_Delayed_Exposure_Heatmap.png')
 fig,axs=plt.subplots(1,2,figsize=(10.3,3.7),layout='constrained');ax=axs[0];q=o[o.time_min<=15]
 ax.plot(q.time_min,q.uptake_cumulative_ng_cm2,c=C[1],ls='--',lw=2,label='Cumulative cellular entry');ax.plot(q.time_min,q.intracellular_ng_cm2,c=C[2],lw=2,label='Surviving intracellular carrier');ax.set(xlabel='Time during application (min)',ylabel='tFNA core DNA (ng/cm²)',title='Uptake is an extracellular sink',xlim=(0,15),xticks=[0,5,10,15]);ax.legend(fontsize=8);pf.lab(ax,'A')
 val=[]
